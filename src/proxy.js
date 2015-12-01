@@ -1,17 +1,5 @@
 import piper from './piper';
 
-let err = (method) => () => {
-  throw new Error(`Proxy to ${method} is not supported yet. Make a PR!`);
-}
-
-const DISALLOWED = [
-  'setPrototypeOf',
-  'isExtensible',
-  'preventExtensions',
-  'defineProperty',
-  'deleteProperty'
-];
-
 const DIRECT = new Set(Object.getOwnPropertyNames(piper({})));
 
 export default function proxy(obj) {
@@ -50,6 +38,26 @@ export default function proxy(obj) {
         return Object.getPrototypeOf(target.valueOf());
       },
 
+      setPrototypeOf(target, proto) {
+        return Object.setPrototypeOf(target.valueOf(), proto);
+      },
+
+      isExtensible(target) {
+        return Object.isExtensible(target.valueOf());
+      },
+
+      preventExtensions(target) {
+        return Object.preventExtensions(target.valueOf());
+      },
+
+      defineProperty(target, prop, descriptor) {
+        return Object.defineProperty(target.valueOf(), prop, descriptor);
+      },
+
+      deleteProperty(target, prop) {
+        delete target.valueOf()[prop];
+      },
+
       apply(target, context, args) {
         return target.valueOf().apply(context, args);
       },
@@ -58,8 +66,6 @@ export default function proxy(obj) {
         return new target.valueOf()(args);
       }
     }
-
-    DISALLOWED.forEach(method => handler[method] = err(method));
 
     return new Proxy(obj, handler);
   
