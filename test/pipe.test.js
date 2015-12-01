@@ -30,4 +30,12 @@ describe('pipeable', () => {
     expect( ++piped ).to.equal(5);
   });
 
+  it('coerces correctly', () => {
+    let n = pipe(5).to(x => x + x);
+    let s = pipe('s').to(x => `${x}${x}`);
+
+    chaiExpect(Number(n)).to.equal(10);
+    chaiExpect(String(s)).to.equal('ss');
+  });
+
 });
