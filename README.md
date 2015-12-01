@@ -4,8 +4,8 @@
 
 Why is it Awesome?
 
-* Doesn't require a kicker
-* Can be treated as a raw value between compositions
+* [Doesn't require a kicker](#no-kicker)
+* [Can be treated as a raw value between compositions](#accessing-values-between-compositions)
 
 ### Install
 
