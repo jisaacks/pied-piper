@@ -21,4 +21,13 @@ describe('pipeable', () => {
     expect( pipe(5).to(double).to(square) ).to.equal(100);
   });
 
+  it('can be used directly as a value', () => {
+    expect( pipe(3).to(increm) * 3 ).to.equal(12);
+  });
+
+  it('can be directly incremented', () => {
+    let piped = pipe(3).to(increm);
+    expect( ++piped ).to.equal(5);
+  });
+
 });
