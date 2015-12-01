@@ -1,11 +1,15 @@
 {
   "name": "pied",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha --harmony_proxies --require babel-core/register",
     "build": "babel src -d dist"
+  },
+  "repository": { 
+    "type" : "git",
+    "url" : "https://github.com/jisaacks/pied-piper.git"
   },
   "keywords": [],
   "author": "",
