@@ -1,11 +1,9 @@
 ![](./pied.jpg)
 
-## Awesome function composition!!
-
 Why is it Awesome?
 
 * [Doesn't require a kicker](#no-kicker)
-* [Can be treated as a raw value between compositions](#accessing-values-between-compositions)
+* [Can be treated as a raw value between pipes](#accessing-values-between-pipes)
 
 ### Install
 
@@ -42,7 +40,7 @@ console.log( piped.length ); // 4
 pipe(5).to(double) * 2; // 20
 ```
 
-### Accessing Values Between Compositions
+### Accessing Values Between Pipes
 
 ```javascript
 let piped = pipe([1, 2]).to(dubs);
