@@ -18,4 +18,3 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function pipe(val) {
   return (0, _proxy2.default)((0, _piper2.default)(val));
 }
-

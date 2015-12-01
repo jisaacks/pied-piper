@@ -55,7 +55,9 @@ describe('pipeable', () => {
     let piped = pipe([1, 2]).to(dubs);
 
     expect(piped).to.have.length(4);
+    
     piped.push(3);
+    
     expect(piped.to(dubs)).to.have.length(10);
   });
 

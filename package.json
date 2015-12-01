@@ -1,11 +1,11 @@
 {
   "name": "pied",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha --harmony_proxies --require babel-core/register",
-    "build": "babel src/index.js > dist/index.js"
+    "build": "babel src -d dist"
   },
   "keywords": [],
   "author": "",
